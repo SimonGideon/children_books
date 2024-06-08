@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { TextField } from "@mui/material";
 import Box from "@mui/material/Box";
+import BookList from "./BookList";
 
-const SearchBar = ({ onSearch, filteredBooks }) => {
+const SearchBar = ({ onSearch, filteredBooks, onAdd }) => {
   const [query, setQuery] = useState("");
 
   const handleSearch = (query) => {
@@ -15,12 +16,20 @@ const SearchBar = ({ onSearch, filteredBooks }) => {
     handleSearch(query);
   };
 
+  // stlying for the booklist props
+  const style = {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: "1rem",
+  };
+
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
-        width: "30%",
+        width: "50%",
       }}
     >
       <TextField
@@ -29,20 +38,24 @@ const SearchBar = ({ onSearch, filteredBooks }) => {
         value={query}
         onChange={handleChange}
         fullWidth
-        sx={{ marginBottom: "1rem" }} // Adding some space below the TextField
       />
       <Box
         className="search-results"
         sx={{
           maxHeight: "30vh",
           overflowY: "auto",
+          position: "relative",
+          backgroundColor: "white",
+          zIndex: 1,
         }}
       >
         {filteredBooks.map((book) => (
-          <Box key={book.title} sx={{ marginBottom: "1rem" }}>
-            <h3>{book.title}</h3>
-            <p>{book.author}</p>
-          </Box>
+          <BookList
+            key={book.title}
+            book={book}
+            onAdd={onAdd}
+            onStyle={style}
+          />
         ))}
       </Box>
     </Box>
