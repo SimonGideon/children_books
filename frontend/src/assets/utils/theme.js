@@ -2,9 +2,12 @@
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
+  // default font family
   typography: {
     fontFamily: "Mulish, sans-serif",
   },
+
+  // modify default color pelletes
   palette: {
     primary: {
       main: "#5ACCCC",

@@ -4,7 +4,12 @@ import Box from "@mui/material/Box";
 import BookList from "./common/BookList";
 import ReadingList from "./ReadingList";
 import SearchBar from "./SearchBar";
-import { logo, GET_BOOKS, styles } from "../assets/constants";
+import {
+  logo,
+  GET_BOOKS,
+  styles,
+  homeBookListStyle,
+} from "../assets/constants";
 import { Typography } from "@mui/material";
 import { CardMedia } from "@mui/material";
 
@@ -12,6 +17,8 @@ const Home = () => {
   const { loading, error, data } = useQuery(GET_BOOKS);
   const [readingList, setReadingList] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
+
+  //  search query for  results
   const handleSearch = (query) => {
     if (!data) return;
     const results = data.books.filter((book) =>
@@ -20,14 +27,17 @@ const Home = () => {
     setFilteredBooks(results);
   };
 
+  // add book to reading list
   const handleAdd = (book) => {
     setReadingList([...readingList, book]);
   };
 
+  // remove book from reading list
   const handleRemove = (book) => {
     setReadingList(readingList.filter((b) => b.title !== book.title));
   };
 
+  // handle loading and error on api fetch
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
@@ -49,7 +59,6 @@ const Home = () => {
           flexDirection: "column",
           alignItems: "center",
           padding: "2rem",
-          marginBottom: { xs: "2rem", md: 0 },
           minWidth: { xs: "100%", md: "15rem" },
           marginRight: { xs: 0, md: 0 },
           gap: 2,
@@ -106,21 +115,19 @@ const Home = () => {
           setFilteredBooks={setFilteredBooks}
           readingList={readingList}
         />
-        <Box
-          className="book-list-container"
+        <Typography
+          variant="h5"
+          color="primary.steal"
           sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            marginTop: "5rem",
-            gap: "0.9rem",
-            overflowY: "auto",
-            height: "calc(100vh - 10px)",
-            scrollbarWidth: "none",
-            marginBottom: "2rem",
-            zIndex: 0,
+            fontWeight: "bold",
+            m: 3,
+            textAlign: "left",
+            width: "100%",
           }}
         >
+          All Books
+        </Typography>
+        <Box className="book-list-container" sx={{ ...homeBookListStyle }}>
           {data &&
             data.books.map((book) => (
               <BookList

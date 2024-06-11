@@ -9,6 +9,7 @@ const BookList = ({ book, onAdd, onStyle, readingList }) => {
     setIsAdded(isBookInList);
   }, [readingList, book.title]);
 
+  // handle book individual add
   const handleAdd = () => {
     onAdd(book);
     setIsAdded(true);

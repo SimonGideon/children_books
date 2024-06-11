@@ -56,9 +56,8 @@ const SearchBar = ({
       sx={{
         display: "flex",
         flexDirection: "column",
-        width: { xs: "80%", md: "70%" },
-        position: "absolute",
-        margin: "1rem",
+        width: "100%",
+        marginTop: { xs: 0, md: 5 },
       }}
     >
       <TextField

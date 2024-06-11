@@ -17,7 +17,7 @@ const ReadingList = ({ readingList, onRemove }) => (
       width: "100%",
       overflowY: "auto",
       scrollbarWidth: "none",
-      maxHeight: "calc(70vh - 10px)",
+      maxHeight: { xs: "calc(30vh)", md: "calc(70vh - 10px)" },
     }}
   >
     {readingList && readingList.length > 0 ? (

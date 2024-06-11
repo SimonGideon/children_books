@@ -36,4 +36,17 @@ const styles = {
   },
 };
 
-export default styles;
+const homeBookListStyle = {
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "center",
+  marginTop: { xs: "1rem", md: -2 },
+  gap: "0.9rem",
+  overflowY: "auto",
+  height: "calc(100vh - 10px)",
+  scrollbarWidth: "none",
+  marginBottom: "5rem",
+  zIndex: 0,
+};
+
+export { styles, homeBookListStyle };

@@ -1,6 +1,6 @@
 import logo from "../images/summer-ico.svg";
 import { gql } from "@apollo/client";
-import styles from "./stylesObj";
+import { styles, homeBookListStyle } from "./stylesObj";
 
 const GET_BOOKS = gql`
   query Books {
@@ -13,4 +13,4 @@ const GET_BOOKS = gql`
   }
 `;
 
-export { logo, GET_BOOKS, styles };
+export { logo, GET_BOOKS, styles, homeBookListStyle };
