@@ -45,7 +45,7 @@ const homeBookListStyle = {
   overflowY: "auto",
   height: "calc(100vh - 10px)",
   scrollbarWidth: "none",
-  marginBottom: "5rem",
+  marginBottom: { xs: "2rem", md: "5rem" },
   zIndex: 0,
 };
 
