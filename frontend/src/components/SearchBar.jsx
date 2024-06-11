@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { TextField } from "@mui/material";
 import Box from "@mui/material/Box";
 import BookList from "./common/BookList";
-import { stlyes } from "../assets/constants/stylesObj";
+import { styles } from "../assets/constants";
 
 const SearchBar = ({
   onSearch,
@@ -49,9 +49,6 @@ const SearchBar = ({
     }
   };
 
-  // Styling for the booklist props
-  const style = stlyes.search;
-
   return (
     <Box
       className="search-container"
@@ -87,7 +84,7 @@ const SearchBar = ({
               key={book.title}
               book={book}
               onAdd={onAdd}
-              onStyle={style}
+              onStyle={styles.search}
               readingList={readingList}
             />
           ))}

@@ -7,7 +7,6 @@ import SearchBar from "./SearchBar";
 import { logo, GET_BOOKS, styles } from "../assets/constants";
 import { Typography } from "@mui/material";
 import { CardMedia } from "@mui/material";
-import { stlyes } from "../assets/constants/stylesObj";
 
 const Home = () => {
   const { loading, error, data } = useQuery(GET_BOOKS);
@@ -29,9 +28,6 @@ const Home = () => {
     setReadingList(readingList.filter((b) => b.title !== book.title));
   };
 
-  // stlye object for the booklist props
-  const style = stlyes.home;
-
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
@@ -42,6 +38,9 @@ const Home = () => {
         flexDirection: { xs: "column", md: "row" },
         alignItems: { xs: "center", md: "flex-start" },
         padding: "0 2rem",
+        height: "100vh",
+        overflow: "hidden",
+        gap: 1,
       }}
     >
       <Box
@@ -51,8 +50,8 @@ const Home = () => {
           alignItems: "center",
           padding: "2rem",
           marginBottom: { xs: "2rem", md: 0 },
-          marginRight: { xs: 0, md: 0 },
           minWidth: { xs: "100%", md: "15rem" },
+          marginRight: { xs: 0, md: 0 },
         }}
       >
         <CardMedia
@@ -87,8 +86,11 @@ const Home = () => {
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "center",
-            marginTop: "4rem",
+            marginTop: "5rem",
             gap: "0.9rem",
+            overflowY: "auto",
+            height: "calc(100vh - 10px)",
+            scrollbarWidth: "none",
           }}
         >
           {data &&
@@ -97,10 +99,11 @@ const Home = () => {
                 key={book.title}
                 book={book}
                 onAdd={handleAdd}
-                onStyle={style}
+                onStyle={styles.home}
                 readingList={readingList}
               />
             ))}
+          {/* loadmore books cut the books into a half using lodash */}
         </Box>
       </Box>
     </Box>

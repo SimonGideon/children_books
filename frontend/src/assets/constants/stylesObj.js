@@ -1,4 +1,4 @@
-const stlyes = {
+const styles = {
   home: {
     container: {
       flexDirection: "row",
@@ -36,4 +36,4 @@ const stlyes = {
   },
 };
 
-export { stlyes };
+export default styles;
