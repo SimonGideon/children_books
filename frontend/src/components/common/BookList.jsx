@@ -34,6 +34,21 @@ const BookList = ({ book, onAdd, onStyle, readingList }) => {
         image={require(`../../${book.coverPhotoURL}`)}
         alt={book.title}
       />
+      <Box
+        sx={{
+          textAlign: "center",
+          position: "absolute",
+          top: 0,
+          right: 0,
+          backgroundColor: "#FABD33",
+          minWidth: "2rem",
+          borderRadius: "100% 0% 44% 56% / 16% 88% 12% 84% ",
+        }}
+      >
+        <Typography fontWeight="bold" color="primary.steal">
+          {book.readingLevel}
+        </Typography>
+      </Box>
       <CardContent sx={{ margin: 0, padding: 0 }}>
         <Typography variant="h5" component="div" sx={{ ...onStyle.title }}>
           {book.title}

@@ -2,12 +2,24 @@
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
+  typography: {
+    fontFamily: "Mulish, sans-serif",
+  },
   palette: {
     primary: {
-      main: "#ff5722",
+      main: "#5ACCCC",
+      contrastText: "#FFFFFF",
+      steal: "#335C6E",
+      yellow: "#FFD33",
     },
     secondary: {
-      main: "#f50057",
+      main: "#CFFAFA",
+      orangeRed: "#F76434",
+      teal: "#4AA088",
+      yellowDark: "#FAAD00",
+      mainDark1: "#53C2C2",
+      mainDark2: "#28B8B8",
+      orangePastel: "#FFE6DC",
     },
   },
 });

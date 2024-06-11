@@ -39,8 +39,8 @@ const Home = () => {
         alignItems: { xs: "center", md: "flex-start" },
         padding: "0 2rem",
         height: "100vh",
-        overflow: "hidden",
         gap: 1,
+        overflowY: "auto",
       }}
     >
       <Box
@@ -52,17 +52,43 @@ const Home = () => {
           marginBottom: { xs: "2rem", md: 0 },
           minWidth: { xs: "100%", md: "15rem" },
           marginRight: { xs: 0, md: 0 },
+          gap: 2,
         }}
       >
-        <CardMedia
-          component="img"
-          image={logo}
-          alt="logo"
+        <Box
           sx={{
-            width: 170,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
           }}
-        />
-        <Typography variant="h5">My Reading List</Typography>
+        >
+          <CardMedia
+            component="img"
+            image={logo}
+            alt="logo"
+            sx={{
+              width: 170,
+            }}
+          />
+          <Typography
+            color="primary.steal"
+            sx={{
+              fontWeight: "light",
+            }}
+          >
+            Confident, Independent Reading
+          </Typography>
+        </Box>
+        <Typography
+          variant="h5"
+          color="primary.steal"
+          sx={{
+            fontWeight: "bold",
+          }}
+        >
+          Reading List
+        </Typography>
         <ReadingList readingList={readingList} onRemove={handleRemove} />
       </Box>
       <Box
@@ -91,6 +117,8 @@ const Home = () => {
             overflowY: "auto",
             height: "calc(100vh - 10px)",
             scrollbarWidth: "none",
+            marginBottom: "2rem",
+            zIndex: 0,
           }}
         >
           {data &&
@@ -103,7 +131,6 @@ const Home = () => {
                 readingList={readingList}
               />
             ))}
-          {/* loadmore books cut the books into a half using lodash */}
         </Box>
       </Box>
     </Box>

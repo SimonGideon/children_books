@@ -12,9 +12,12 @@ const ReadingList = ({ readingList, onRemove }) => (
     flex
     sx={{
       p: 2,
-      border: "1px solid #ccc",
+      border: "1px solid #5ACCCC",
       borderRadius: "5px",
       width: "100%",
+      overflowY: "auto",
+      scrollbarWidth: "none",
+      maxHeight: "calc(70vh - 10px)",
     }}
   >
     {readingList && readingList.length > 0 ? (
@@ -34,11 +37,14 @@ const ReadingList = ({ readingList, onRemove }) => (
             sx={{ marginRight: "1rem" }}
           />
           <Button
+            className="remove-button"
             variant="contained"
             onClick={() => onRemove(book)}
             sx={{
               fontSize: "0.875rem",
               padding: "0.3rem 1.5rem",
+              backgroundColor: "#f76434",
+              onHover: { backgroundColor: "#F76434" },
             }}
           >
             Remove
@@ -46,8 +52,12 @@ const ReadingList = ({ readingList, onRemove }) => (
         </ListItem>
       ))
     ) : (
-      <Typography variant="h6" sx={{ textAlign: "center", marginTop: "1rem" }}>
-        No books in your reading list
+      <Typography
+        variant="h6"
+        sx={{ textAlign: "center", margin: "0.875rem", fontWeight: "light" }}
+        color="text.secondary"
+      >
+        No books in reading list
       </Typography>
     )}
   </List>

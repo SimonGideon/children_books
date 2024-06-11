@@ -4,6 +4,7 @@ import { ApolloProvider, InMemoryCache, ApolloClient } from "@apollo/client";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./assets/utils";
 import App from "./App";
+import "./index.css";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/",

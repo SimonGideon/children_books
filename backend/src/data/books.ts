@@ -15,7 +15,7 @@ export const booksData = [
     'title': 'Happy Knight and the Magic Spell',
     'author': 'Quinn Brown',
     'coverPhotoURL': 'assets/image10.webp',
-    'readingLevel': 'I'
+    '5ACCCC': 'I'
   },
   {
     'title': 'Happy Dragon and the Magic Spell',
