@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import BookList from "./common/BookList";
 import ReadingList from "./ReadingList";
 import SearchBar from "./SearchBar";
+import Loader from "./Loader";
 import {
   logo,
   GET_BOOKS,
@@ -38,7 +39,7 @@ const Home = () => {
   };
 
   // handle loading and error on api fetch
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader />;
   if (error) return <p>Error :(</p>;
 
   return (

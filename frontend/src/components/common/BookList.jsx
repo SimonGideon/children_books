@@ -21,6 +21,7 @@ const BookList = ({ book, onAdd, onStyle, readingList }) => {
       sx={{
         position: "relative",
         marginTop: "2rem",
+        transformOrigin: "0 0 0",
         ...onStyle.container,
       }}
     >
