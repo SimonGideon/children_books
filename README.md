@@ -1,8 +1,8 @@
 
 
-# Ello Engineering Challenge Submission
+# Ello Take away assignment
 
-👋 Hello, WThis is my submission for the Ello Engineering Challenge! In this project, I've implemented the book assignment view for the Ello web viewer product. This view allows teachers to search for books, add them to a reading list, and remove them as needed.
+👋 Hello, This is my submission for the Ello Engineering Challenge! In this project, I've implemented the book assignment view for the Ello web viewer product. This view allows teachers to search for books, add them to a reading list, and remove them as needed.
 
 ### Features
 ✔️ Search Bar to search for books by title.
